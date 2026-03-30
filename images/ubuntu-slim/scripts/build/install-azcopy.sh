@@ -8,7 +8,14 @@
 source $HELPER_SCRIPTS/install.sh
 
 # Install AzCopy10
-archive_path=$(download_with_retry "https://aka.ms/downloadazcopy-v10-linux")
+ARCH=$(uname -m)
+case "$ARCH" in
+    x86_64)  AZCOPY_URL="https://aka.ms/downloadazcopy-v10-linux" ;;
+    aarch64) AZCOPY_URL="https://aka.ms/downloadazcopy-v10-linux-arm64" ;;
+    *) echo "Unsupported architecture: $ARCH" && exit 1 ;;
+esac
+
+archive_path=$(download_with_retry "$AZCOPY_URL")
 tar xzf "$archive_path" --strip-components=1 -C /tmp
 install /tmp/azcopy /usr/local/bin/azcopy
 

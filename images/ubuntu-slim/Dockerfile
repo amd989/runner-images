@@ -2,12 +2,13 @@ FROM ubuntu:24.04 AS base
 
 ARG IMAGE_VERSION=1.0.0
 ARG IMAGE_OWNER="GitHub"
+ARG TARGETPLATFORM
 
 ENV IMAGE_OWNER=$IMAGE_OWNER
 ENV ImageVersion=$IMAGE_VERSION
 ENV IMAGE_VERSION=$IMAGE_VERSION
 ENV ImageOS="Linux"
-ENV IMAGE_TARGET_PLATFORM="GitHub"
+ENV IMAGE_TARGET_PLATFORM=${TARGETPLATFORM}
 ENV POWERSHELL_DISTRIBUTION_CHANNEL="GitHub-Actions-$ImageOS"
 ENV IMAGEDATA_NAME="ubuntu:24.04"
 ENV NVM_DIR="/etc/skel/.nvm"
@@ -27,7 +28,9 @@ RUN chmod +x /opt/entrypoint.sh
 
 RUN echo 'set -eo pipefail' >> /etc/bash.bashrc
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo lsb-release jq dpkg && \
+RUN --mount=type=secret,id=github_token \
+    if [ -f /run/secrets/github_token ]; then export GITHUB_TOKEN=$(cat /run/secrets/github_token); fi && \
+    apt-get update && apt-get upgrade -y && apt-get install -y sudo lsb-release jq dpkg && \
     touch /run/.containerenv && \
     /tmp/scripts/build/configure-apt-sources.sh && \
     /tmp/scripts/build/configure-apt.sh && \
@@ -56,10 +59,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y sudo lsb-release 
     /tmp/scripts/build/install-pipx-packages.sh && \
     /tmp/scripts/build/install-docker-cli.sh && \
     /tmp/scripts/build/configure-system.sh && \
+    /tmp/scripts/build/install-runner.sh && \
     /tmp/scripts/helpers/cleanup.sh
 
 RUN sed -i '/set -eo pipefail/d' /etc/bash.bashrc
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
-
-CMD [ "bash" ]

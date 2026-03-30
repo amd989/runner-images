@@ -5,17 +5,17 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "OS Version:",
-      "Version": "24.04.3 LTS"
+      "Version": "24.04.4 LTS"
     },
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20260120.46.1"
+      "Version": "1.0.0"
     },
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Systemd version:",
-      "Version": "255.4-1ubuntu8.12"
+      "Version": "255.4-1ubuntu8.14"
     },
     {
       "NodeType": "HeaderNode",
@@ -38,7 +38,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Node.js",
-              "Version": "24.13.0"
+              "Version": "24.14.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -59,7 +59,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Npm",
-              "Version": "11.6.2"
+              "Version": "11.11.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.8.0"
+              "Version": "1.11.0"
             }
           ]
         },
@@ -85,32 +85,32 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AzCopy",
-              "Version": "10.31.1 - available by `azcopy` and `azcopy10` aliases"
+              "Version": "10.32.2 - available by `azcopy` and `azcopy10` aliases"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Bicep",
-              "Version": "0.39.26"
+              "Version": "0.41.2"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Compose v2",
-              "Version": "5.0.1"
+              "Version": "5.1.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker-Buildx",
-              "Version": "0.30.1"
+              "Version": "0.31.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Client",
-              "Version": "29.1.5"
+              "Version": "29.3.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Git",
-              "Version": "2.52.0"
+              "Version": "2.53.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -130,17 +130,17 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "nvm",
-              "Version": "0.40.3"
+              "Version": "0.40.4"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "OpenSSL",
-              "Version": "3.0.13-0ubuntu3.6"
+              "Version": "3.0.13-0ubuntu3.7"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "yq",
-              "Version": "4.50.1"
+              "Version": "4.52.5"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -156,22 +156,22 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.33.2"
+              "Version": "2.34.19"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI Session Manager Plugin",
-              "Version": "1.2.764.0"
+              "Version": "1.2.792.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS SAM CLI",
-              "Version": "1.151.0"
+              "Version": "1.157.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Azure CLI",
-              "Version": "2.82.0"
+              "Version": "2.84.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -181,12 +181,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GitHub CLI",
-              "Version": "2.85.0"
+              "Version": "2.89.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "552.0.0"
+              "Version": "562.0.0"
             }
           ]
         },
@@ -196,7 +196,7 @@
           "Children": {
             "NodeType": "ToolVersionNode",
             "ToolName": "PowerShell",
-            "Version": "7.5.4"
+            "Version": "7.5.5"
           }
         },
         {
@@ -211,13 +211,13 @@
               "autoconf|2.71-3",
               "automake|1:1.16.5-1.3ubuntu1",
               "bc|1.07.1-3ubuntu4",
-              "binutils|2.42-4ubuntu2.8",
+              "binutils|2.42-4ubuntu2.10",
               "bzip2|1.0.8-5.1build0.1",
               "ca-certificates|20240203",
-              "coreutils|9.4-3ubuntu6.1",
-              "curl|8.5.0-2ubuntu10.6",
+              "coreutils|9.4-3ubuntu6.2",
+              "curl|8.5.0-2ubuntu10.8",
               "dbus|1.14.10-4ubuntu4.1",
-              "dnsutils|1:9.18.39-0ubuntu0.24.04.2",
+              "dnsutils|1:9.18.39-0ubuntu0.24.04.3",
               "dpkg|1.22.6ubuntu6.5",
               "dpkg-dev|1.22.6ubuntu6.5",
               "fakeroot|1.33-1",
@@ -233,19 +233,19 @@
               "iproute2|6.1.0-1ubuntu6.2",
               "iputils-ping|3:20240117-1ubuntu0.1",
               "jq|1.7.1-3ubuntu0.24.04.1",
-              "libnss3-tools|2:3.98-1build1",
+              "libnss3-tools|2:3.98-1ubuntu0.1",
               "libsqlite3-dev|3.45.1-1ubuntu2.5",
-              "libssl-dev|3.0.13-0ubuntu3.6",
+              "libssl-dev|3.0.13-0ubuntu3.7",
               "libtool|2.4.7-7build1",
               "libyaml-dev|0.2.5-1build1",
-              "locales|2.39-0ubuntu8.6",
+              "locales|2.39-0ubuntu8.7",
               "lz4|1.9.4-1build1.1",
               "lzma|9.22-2.2",
               "make|4.3-4.1build2",
               "mercurial|6.7.2-1ubuntu2.2",
               "net-tools|2.10-0.1ubuntu4.4",
               "netcat-openbsd|1.226-1ubuntu2",
-              "openssh-client|1:9.6p1-3ubuntu13.14",
+              "openssh-client|1:9.6p1-3ubuntu13.15",
               "p7zip-full|16.02+transitional.1",
               "p7zip-rar|16.02+transitional.1",
               "parallel|20231122+ds-1",
@@ -258,12 +258,12 @@
               "rsync|3.2.7-1ubuntu1.2",
               "shellcheck|0.9.0-1",
               "sqlite3|3.45.1-1ubuntu2.5",
-              "ssh|1:9.6p1-3ubuntu13.14",
+              "ssh|1:9.6p1-3ubuntu13.15",
               "sshpass|1.09-1",
-              "sudo|1.9.15p5-3ubuntu5.24.04.1",
-              "systemd-coredump|255.4-1ubuntu8.12",
+              "sudo|1.9.15p5-3ubuntu5.24.04.2",
+              "systemd-coredump|255.4-1ubuntu8.14",
               "tar|1.35+dfsg-3build1",
-              "telnet|0.17+2.5-3ubuntu4",
+              "telnet|0.17+2.5-3ubuntu4.1",
               "texinfo|7.1-3build2",
               "time|1.9-0.2build1",
               "tk|8.6.14build1",

@@ -1,0 +1,30 @@
+services:
+  runner:
+    build: .
+    environment:
+      # Required: PAT with 'repo' scope (repo-level) or 'admin:org' scope (org-level)
+      # Fine-grained PAT alternative: "Administration" read-write permission
+      - GITHUB_PAT=${GITHUB_PAT}
+
+      # Required: org or user name
+      - GITHUB_OWNER=${GITHUB_OWNER}
+
+      # Optional: set for repo-level runner, omit for org-level runner
+      - GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
+
+      # Optional: comma-separated labels (default: self-hosted,linux,x64,docker)
+      - RUNNER_LABELS=${RUNNER_LABELS:-self-hosted,linux,x64,docker}
+
+      # Optional: runner name prefix (default: runner). A unique suffix is appended automatically
+      - RUNNER_NAME_PREFIX=${RUNNER_NAME_PREFIX:-runner}
+
+      # Optional: runner group (default: Default)
+      - RUNNER_GROUP=${RUNNER_GROUP:-Default}
+    volumes:
+      # Persist runner config across restarts (skips re-registration)
+      - runner-data:/opt/actions-runner
+    restart: unless-stopped
+    # Scale runners: docker compose up -d --scale runner=5
+
+volumes:
+  runner-data:

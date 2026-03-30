@@ -54,7 +54,12 @@ get_github_releases_by_version() {
 
     page_size="100"
 
-    json=$(curl -fsSL "https://api.github.com/repos/${repo}/releases?per_page=${page_size}")
+    local auth_header=""
+    if [[ -n "$GITHUB_TOKEN" ]]; then
+        auth_header="-H \"Authorization: token ${GITHUB_TOKEN}\""
+    fi
+
+    json=$(eval curl -fsSL $auth_header "https://api.github.com/repos/${repo}/releases?per_page=${page_size}")
 
     if [[ -z "$json" ]]; then
         echo "Failed to get releases" >&2
